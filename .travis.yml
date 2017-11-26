@@ -1,0 +1,29 @@
+language: cpp
+
+before_install:
+- sudo apt-get update -q
+- sudo apt-get install -q freeglut3-dev libantlr-dev       
+    libcv2.4           
+    libcvaux2.4        
+    libfltk1.1-dev     
+    libhighgui2.4      
+    libopencv-dev       
+
+compiler:
+- gcc
+
+script:
+- ./build.sh
+
+#before_deploy:
+#-  tar cvf exercises.tgz --gzip chap*/ex*/chap*ex[0-9]
+#-  echo ${GITHUB_TOKEN} | wc -c
+
+
+#deploy:
+#  provider: releases
+#  api_key: ${GITHUB_TOKEN}
+#  file: exercises.tgz
+#  skip_cleanup: true
+#  overwrite: true
+
